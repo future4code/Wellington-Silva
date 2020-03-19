@@ -1,39 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="adicionar-produto.css">
     <title>Adicionar Produto</title>
 </head>
+
 <body>
-    <a href="pagina-inicial.html">Pagina Inicial</a>
+    <div class="opcao">
+        <ul>
+        <li><a href="pagina-inicial.html" class="opcao">Página Inicial</a></li>
 
-    <a href="controle-de-estoque.html">Controle de Estoque</a>
+        <li><a href="controle-de-estoque.html" class="opcao">Controle de Estoque</a></li>
+
+        <li><a href="funcionarios.html" class="opcao">Funcionários</a></li>
+    </ul>
+    </div>
 
 
-    <a href="funcionarios.html">Funcionários</a>
+    <div class="form">
+        <form action="">
 
-    <br><br><br>
+            <div class="label1">
+                <label for="imagem">Uploud da Imagem</label>
+                <input type="file" name="imagem" id="imagem">
+            </div>
+            
+            <div class="label2">
+                <label for="desc">Descrição</label>
+                <input type="text" name="desc" id="desc">
+            </div>
 
-    <form action="">
-        <label for="imagem">Ulpoud da Imagem</label>
-        <input type="file" name="imagem" id="imagem">
+            
+            <div class="label3">
+                <label for="preco">Preço</label>
+                <input type="text" name="preco" id="preco">
+            </div>
 
-        <br><br>
-
-        <label for="desc">Descrição</label>
-        <input type="text" name="desc" id="desc">
-
-        <br><br>
-
-        <label for="preco">Preço</label>
-        <input type="text" name="preco" id="preco">
-
-        <br><br>
-
-        <label for="quant">Quantidade Disponível</label>
-        <input type="text" name="quant" id="quant">
-
-    </form>
+            
+            <div class="label4">
+                <label for="quant">Quantidade Disponível</label>
+                <input type="text" name="quant" id="quant">
+            </div>
+        </form>
+    </div>
 </body>
+
 </html>
