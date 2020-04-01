@@ -19,6 +19,7 @@ e com valor 4 o valor 12
 const originalArray = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
 let maior = originalArray[0];
 let menor = originalArray[0];
+let novaArray = [];
 
 /* resposta a */
 for (let element of originalArray){
@@ -45,10 +46,15 @@ for(let element of originalArray){
     }
 }
 
-/* resposta d - incompleta */
-for(let index = 0;index <=12;index++){
-        console.log('O elemento do índex '+index)
-    }
+/* resposta d */
+
+    
+    for(let item of originalArray){
+        let divisao
+        divisao = item/10
+        novaArray.push(divisao)
+      }
+    console.log(novaArray)
    
 
 
