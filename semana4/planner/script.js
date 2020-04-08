@@ -1,10 +1,3 @@
-	/*
-		This is an adaption of the to-do-list I made a couple of days ago. I wanted to make the checkboxes disappear and only appear when hovered upon, but i was
-		unable to get it to work. I got it to work for one but when you hover over the other items it would show the first items checkbox and not its checkbox. Still working the bugs out on that part. Hope you guys like the planner.
-		
-		Any suggestions for improvements is welcome :)
-	*/
-
 function addItem() {
 	let item = document.getElementById('task').value;
 	let dia = document.getElementById('dias').value;
