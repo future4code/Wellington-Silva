@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="style.css">
+	<title>Weekly Planner</title>
+</head>
+<body>
+	<header>
+		<div id="user-input">
+			<input type="text" placeholder="Add a Task..." id="task">
+			<select name="dias" id="dias">
+				<option value="segunda">segunda</option>
+				<option value="terca">terça</option>
+				<option value="quarta">quarta</option>
+				<option value="quinta">quinta</option>
+				<option value="sexta">sexta</option>
+				<option value="sabado">sabado</option>
+				<option value="domingo">domingo</option>
+			</select>
+			<button type="button" onclick="addItem()">Adicionar Item</button>
+		</div>
+	</header>
+	<main>
+		<div class="dia" id="segunda"><span><h3>segunda</h3></span></div>
+		<div class="dia" id="terca"><span><h3>terça</h3></span></div>
+		<div class="dia" id="quarta"><span><h3>quarta</h3></span></div>
+		<div class="dia" id="quinta"><span><h3>quinta</h3></span></div>
+		<div class="dia" id="sexta"><span><h3>sexta</h3></span></div>
+		<div class="dia" id="sabado"><span><h3>sabado</h3></span></div>
+		<div class="dia" id="domingo"><span><h3>domingo</h3></span></div>
+	</main>
+
+	<script src="script.js"></script>
+</body>
+</html>
