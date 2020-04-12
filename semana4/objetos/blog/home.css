@@ -1,0 +1,33 @@
+*{
+	margin: 0;
+	padding: 0;
+	color: white;
+}
+
+body{
+	background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+	font-family: sans-serif;
+}
+
+nav{
+	position: relative;
+	top: 5vh;
+	height: 10vh;
+}
+
+nav ul{
+	display: flex;
+	justify-content: space-around; 
+	text-transform: uppercase; 
+}
+
+nav ul li{
+	list-style: none;
+	height: 10vh; 
+}
+
+nav ul li a{
+	text-decoration: none;
+	font-size: 20px;
+}
+
