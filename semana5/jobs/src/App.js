@@ -3,6 +3,7 @@ import './App.css';
 import CardGrande from './components/CardGrande/CardGrande';
 import ImagemButton from './components/ImagemButton/ImagemButton';
 import CardPequeno from './components/CardPequeno/CardPequeno';
+import IconeLabenu from './components/IconeLabenu/IconeLabenu';
 
 
 
@@ -10,6 +11,12 @@ function App() {
   return (
     <div className="App">
 
+    <div className="imagem">
+        <IconeLabenu 
+          imagem="https://uploads-ssl.webflow.com/5e790d30d198385b09366d8f/5e7a1e52fcda283f91287398_logoLabenu100.png"
+        />
+        
+      </div>
 
       <div className="page-section-container">
 
