@@ -1,0 +1,24 @@
+.imagem {
+    display: flex;
+    align-items: center;
+    padding: 20px 10px;
+    margin-bottom: 10px;
+    height: 100px;
+    position: fixed;
+    right: 30px;
+    bottom: 0px;
+}
+
+.imagem > img {
+    width: 70px;
+    margin-right: 10px;
+    border-radius: 50%;
+    background-color: gray;
+}
+
+
+.imagem > div {
+    display: flex;
+    flex-direction: column;
+    justify-items: flex-start;
+}
