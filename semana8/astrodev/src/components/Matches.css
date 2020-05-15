@@ -1,0 +1,23 @@
+div img{
+    max-width: 50px;
+    max-height: 50px;
+    border-radius: 50%;
+}
+
+.container{
+    margin: auto;
+    width: 400px;
+    background-color: #fff;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.lista{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 200px;
+    height: 60px;
+    padding: 10px 20px;
+    margin: 10px;
+}
