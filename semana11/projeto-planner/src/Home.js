@@ -57,27 +57,49 @@ const BootstrapInput = withStyles((theme) => ({
   export default function Home() {
     
     const classes = useStyles();
-    const [age, setAge] = React.useState('');
-    const handleChange = (event) => {
-      setAge(event.target.value);
-    };
+    const [inputValue, setInputValue] = useState('')
+    const [selectValue, setSelectValue] = React.useState('segunda');
+    const [tarefas, setTarefas] = useState([])
 
-    const [tarefas, setTarefas] = useState({
-        texto: "passar roupa",
-        day:'segunda'
-    })
 
-    useEffect(()=>{
-      axios.get('https://us-central1-labenu-apis.cloudfunctions.net/generic/:planner-julian-wellington', {
-          headers:{
-              Authorization: 'wellington'
-          }
-      })
+
+    const request = () =>{
+      axios.get('https://us-central1-labenu-apis.cloudfunctions.net/generic/:planner-julian-wellington')
       .then(response => {
           setTarefas(response.data)
           console.log(response.data)
       })
+    }
+
+    useEffect(()=>{
+      request()
     },[])
+
+    
+    const onChangeSelect = (event) => {
+      setSelectValue(event.target.value);
+    };
+
+    const textoInput = (e) =>{
+      setInputValue(e.target.value)
+      console.log(inputValue)
+    }
+   
+    const enviarRequest = () => {
+      console.log("clicou")
+      const body = {
+        text: inputValue,
+        day: selectValue
+      }
+
+      axios.post('https://us-central1-labenu-apis.cloudfunctions.net/generic/:planner-julian-wellington', body)
+
+      request()
+    }
+
+    const segunda = tarefas.filter((tarefa)=>{
+      return tarefa.day = 'segunda'
+    })
 
 
     return (
@@ -85,7 +107,7 @@ const BootstrapInput = withStyles((theme) => ({
             <div className='container'>
                 <h1>Criar Tarefa</h1>
                 <FormControl className={classes.margin}>
-                    <InputLabel htmlFor="demo-customized-textbox"></InputLabel>
+                    <InputLabel htmlFor="demo-customized-textbox" onChange={textoInput} value={inputValue} required></InputLabel>
                     <BootstrapInput id="demo-customized-textbox" />
                 </FormControl>
 
@@ -94,30 +116,37 @@ const BootstrapInput = withStyles((theme) => ({
                     <Select
                         labelId="demo-customized-select-label"
                         id="demo-customized-select"
-                        value={age}
-                        onChange={handleChange}
+                        value={selectValue}
+                        onChange={onChangeSelect}
                         input={<BootstrapInput />}
+                      
                     >
-                        <MenuItem value=""><em>None</em></MenuItem>
-                        <MenuItem value={10}>Segunda-feira</MenuItem>
-                        <MenuItem value={20}>Terça-feira</MenuItem>
-                        <MenuItem value={30}>Quarta-feira</MenuItem>
+  
+                        <MenuItem value= 'segunda'>Segunda-feira</MenuItem>
+                        <MenuItem value= 'terça'>Terça-feira</MenuItem>
+                        <MenuItem value= 'quarta'>Quarta-feira</MenuItem>
                     </Select>
                 </FormControl>
-           <Button variant="contained" color="primary" size='large' className='button'>Criar</Button>
+           <button onClick={enviarRequest }>Criar</button>
+
             </div>
 
             <div className='section'>
+
                 <section className='seg'>
                     <h3>Segunda-feira</h3>
+                    {segunda.map(tarefa => {
+                      return <p>{tarefa.text}</p>
+                    })}
+                    
                 </section>
 
                 <section>
-                    <h3>Terça-feira</h3>
+                  
                 </section>
 
                 <section>
-                    <h3>Quarta-feira</h3>
+              
                 </section>
 
                 
